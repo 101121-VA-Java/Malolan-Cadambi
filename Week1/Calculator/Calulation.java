@@ -1,6 +1,4 @@
-package src;
-
-import Calculator.Calculator;
+package Calculator;
 
 public class Calulation {
 

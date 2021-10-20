@@ -1,6 +1,4 @@
-package src;
-
-import Stringfunctions.StringUtils;
+package Stringfunctions;
 
 public class StringFunctions {
 
