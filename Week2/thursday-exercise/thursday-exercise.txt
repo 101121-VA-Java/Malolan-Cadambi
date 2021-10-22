@@ -1,0 +1,68 @@
+public static void main(String[] args) {  
+
+//** declation class public = visisble to other classes, static = same value across all instances of the class, void = no return type, main = the entry point of any java program
+String {} args = args containts the supllied command line agruement as an array of string objects.**//
+
+	String[] foodTypes = getFoodTypes(); 
+
+//** an array of type string declaring it named foodTypes and using a getter of getFoodTypes() to provide the assingment. **//
+
+	String myType = foodTypes[2]; 
+
+//** creating a reference variable of type string declared myType assinged to the empty array foodTypes of leight 2 ** //
+
+	String[] foodsOfMyType = getFoodsByType(myType); 
+
+//** type String arrray declared foodsofMyType assinged to getFoodsByType using the parameter myType **//
+	
+	for (String food : foodsOfMyType) {
+		System.out.println(food);
+	}
+}
+
+// ** enhanced for loop: for each String food in the array foodsOfMyType print a line in the console with the food from the array in foodsOfMyType ** //
+
+public static String[] getFoodTypes() { // ** method getFoodTypes with no parameters ** //
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; // ** string array declare to be foodTypes assinged to the following values : "breakfast","lunch","dinner","dessert","snack" **//
+
+	return foodTypes; //** return the array foodTypes **//
+}
+
+public static String[] getFoodsByType(String type) { //** static method of type string array named getFoodsByType with one parameter of type String named type. This is an example of method overloading **//
+
+	String[] foods = new String[3]; //** String array declared foods assigned with null values in an array of length 3 **//
+
+
+	switch(type) { // ** notice the parameter that was fed into the method is used here **//
+	case "breakfast": // ** if it is breakfast this is the array **//
+		foods[0] = "pancakes";
+		foods[1] = "cereal";
+		foods[2] = "omelette";
+		break;
+	case "lunch": // ** in case of lunch this is the array ** //
+		foods[0] = "sandwich";
+		foods[1] = "salad";
+		foods[2] = "soup";
+		break;
+	case "dinner": //** in case of dinner this is the array ** //
+		foods[0] = "curry";
+		foods[1] = "stir fry";
+		foods[2] = "burger";
+		break;
+	case "dessert": // ** in case of dessert this is the array ** //
+		foods[0] = "cake";
+		foods[1] = "ice cream";
+		foods[2] = "candy";
+		break;
+	case "snack":// ** in case of snack this is the array ** //
+		foods[0] = "chips";
+		foods[1] = "apple";
+		foods[2] = "samosa";
+		break;
+	default: // ** this is the specified default ** //
+		// add your own
+		break;
+	}
+
+	return foods; // ** returns the foods array (doesn't print it, just returns it.) **//
+}
