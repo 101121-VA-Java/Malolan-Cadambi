@@ -1,0 +1,24 @@
+public class Food { // Declaration of a public class called food
+	public String name; // declares string name
+	public String type; // delcares string type
+
+	public Food(String name, String type) { // declaration of a constructor with name and type as parameters
+		this.name = name; // assigning the value of class string name from parameter name
+		this.type = type; //  assigning the value of class string type from parameter type
+	}
+
+	public void cook() {  // it is declaration of public method cook with no return type
+		if (!name.contains("cooked")) { // this is a to check the condition if the String name contains the value "cooked"
+			name = "cooked " + name; // if the condition is satisfied, it is concatenating cooked + name and assings the value to name
+		}
+	}
+}
+
+public class Main { // it is a declartion of public class main
+	public static void main(String[] args) { // it is a declaration of public static main method
+		Food myFood = new Food("potato", "vegetable"); // it is instantiating  myFood with parameterized construction with food values
+		myFood.cook(); // calling cook method in food class
+
+		System.out.println(myFood.name); // printing string name from food class
+	}
+}
