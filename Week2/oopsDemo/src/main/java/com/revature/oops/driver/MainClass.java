@@ -20,7 +20,7 @@ public class MainClass {
 		HumanActivity hActivity = new HumanActivity();// constructor created, object Instantiation 
 		hActivity.run(); 
 		hActivity.walk(); 
-		hActivity.throwException(2,4);
+		hActivity.throwException(2,3);
 
 	}
 

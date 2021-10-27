@@ -19,6 +19,6 @@ public class Main { // it is a declartion of public class main
 		Food myFood = new Food("potato", "vegetable"); // it is instantiating  myFood with parameterized construction with food values
 		myFood.cook(); // calling cook method in food class
 
-		System.out.println(myFood.name); // printing string name from food class
+		System.out.println(myFood.name); // printing string name "cooked potato" from food class
 	}
 }
