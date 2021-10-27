@@ -15,4 +15,12 @@ public class HumanActivity implements Activity {
 		System.out.println("the system is Walking");
 		
 	}
+	
+	public int throwException(int a, int b) {//throws exception 
+		int result = a + b;
+		if(result == 6) {
+			throw new ArithmeticException();
+		}
+		return result;
+	}
 }
