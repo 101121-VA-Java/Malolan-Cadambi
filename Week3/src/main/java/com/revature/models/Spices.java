@@ -2,47 +2,33 @@ package com.revature.models;
 
 public class Spices {
 	
-	int qty;
+	private int qty;
 	
-	String name;
+	private String name;
 	
-	String countryOfOrigin;
+	private String countryOfOrigin;
 
-	public void setName (String name) {
-		
+	public void setName (String name) {		
 		this.name = name;
 	}
 	
-	public String getName () {
-		
-		return this.name;
-		
+	public String getName () {		
+		return this.name;		
 	}
 	
-	public void setQty (int qty) {
-		
-		this.qty = qty;
-		
+	public void setQty (int qty) {		
+		this.qty = qty;		
 	}
 	
-	public int getQty () {
-		
+	public int getQty () {		
 		return this.qty;
-		
 	}
 	
-	public void setCountryOfOrigin (String countryOfOrigin) {
-		
-		this.countryOfOrigin = countryOfOrigin;
-		
+	public void setCountryOfOrigin (String countryOfOrigin) {		
+		this.countryOfOrigin = countryOfOrigin;		
 	}
 	
-	public String getCountryOfOrigin () {
-		
+	public String getCountryOfOrigin () {		
 		return this.countryOfOrigin;
-		
-	}
-	
-	
-	
+	}	
 }
