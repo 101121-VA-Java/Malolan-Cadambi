@@ -1,16 +1,18 @@
 package com.revature.controllers;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.revature.exceptions.UserNotFoundException;
 import com.revature.exceptions.UsernameAlreadyInUseException;
+import com.revature.models.Payments;
+import com.revature.models.Spices;
 import com.revature.models.Users;
 import com.revature.services.UserService;
 
 public class UserController {
 	//Registering Employee
-	public void registerEmployee(Scanner scan) {
-		
+	public void registerEmployee(Scanner scan) {		
 		Users newUser = new Users();		
 		try {
 			newUser.setEmployee(true);
@@ -25,8 +27,7 @@ public class UserController {
 		}
 	}
 	//Registering Customer
-	public void registerCustomer(Scanner scan) {
-		
+	public void registerCustomer(Scanner scan) {		
 		Users newUser = new Users();		
 		try {
 			newUser.setCustomer(true);
@@ -72,8 +73,7 @@ public class UserController {
 	
 	//Login Customer
 	public void loginCustomer(Scanner scan) {
-		try {
-			
+		try {			
 			Users user = new Users();
 			user.setCustomer(true);
 			String status = loginUser(scan, user);	
@@ -97,5 +97,24 @@ public class UserController {
 		UserService userService = new UserService();
 		String status = userService.loginUser(user);
 		return status;
+	}
+	
+	public void viewEmployeePayments(Scanner scan) {		
+		//Call service class to get all payments history
+		UserService userService = new UserService();
+		System.out.println("Please enter employee name for payment history is requested for : ");
+		List<Payments> paymentsList = userService.getEmployeePayments(scan.nextLine());
+		
+		if(null !=paymentsList) {
+			System.out.println("Payment history: ");
+			for(Payments payment : paymentsList) {
+				System.out.println("Spice Name : "+ payment.getSpiceName());
+				System.out.println("Payment : "+ payment.getPayment());
+				System.out.println("");
+			}			
+		}
+		else {
+			System.out.println("Error retreiving payment history");
+		}	
 	}
 }
